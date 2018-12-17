@@ -67,7 +67,7 @@
                                     </asp:DropDownList>
                                 </div>
 									<div class="field half first">
-                                        <asp:Button ID="comprarBtn" runat="server" Text="Realizar Compra" OnClick="comprarBtn_Click" />
+                                        <asp:Button ID="comprarBtn" runat="server" Text="Realizar Compra" OnClick="comprarBtn_Click" Visible="False" />
 									</div>
                                     <div class="field half">
                                         <asp:Button ID="volverBtn" runat="server" Text="Volver" OnClick="volverBtn_Click" />

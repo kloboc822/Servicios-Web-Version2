@@ -39,6 +39,7 @@ public partial class CompraBoletos2 : System.Web.UI.Page
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
+        comprarBtn.Visible = true;
         Global.cod_vuelo = GridView1.SelectedRow.Cells[1].Text;
         Global.precio = Int32.Parse(GridView1.SelectedRow.Cells[4].Text);
     }
