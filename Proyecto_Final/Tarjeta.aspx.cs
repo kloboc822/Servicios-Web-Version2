@@ -52,13 +52,20 @@ public partial class Tarjeta : System.Web.UI.Page
         {
             NewService.Service1Client servicio = new NewService.Service1Client();
             resultado = servicio.GetTarjeta(Int32.Parse(codTxt.Text), Int32.Parse(tarjetaTxt.Text), nombreTxt.Text, 500, Int32.Parse(annoTxt.SelectedValue), Int32.Parse(mesTxt.SelectedValue), tipotarjeta);
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + " Por favor oprima cancelar para volver al menú principal ')", true);
 
             try
             {
                 VueloDa.registrarCompra();
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Éxito')", true);
-                Response.Redirect("IndexUser.aspx");
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra registrada con éxito.')", true);
+                codTxt.Enabled = false;
+                tarjetaTxt.Enabled = false;
+                nombreTxt.Enabled = false;
+                annoTxt.Enabled = false;
+                mesTxt.Enabled = false;
+                TipoTxt.Enabled = false;
+                pagar.Visible = false;
+
             }
             catch (Exception s)
             {
@@ -118,5 +125,10 @@ public partial class Tarjeta : System.Web.UI.Page
 
         }
 
+    }
+
+    protected void cancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://localhost:53551/IndexUser.aspx");
     }
 }

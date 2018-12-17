@@ -91,7 +91,7 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-      
+      <%Global.id = 1; Global.userType = 6; %>
       window.location.assign("IndexUser.aspx");
       
   }

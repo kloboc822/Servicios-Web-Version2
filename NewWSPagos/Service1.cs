@@ -33,7 +33,7 @@ namespace NewWSPagos
                 }
 
                 conexion.Close();
-                return "Transacción exitosa";
+                return "Transacción exitosa.";
             }
             catch (Exception e)
             {
@@ -62,7 +62,7 @@ namespace NewWSPagos
                 }
 
                 conexion.Close();
-                return "Transacción exitosa";
+                return "Transacción exitosa.";
             }
             catch (Exception e)
             {

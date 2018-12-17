@@ -37,13 +37,16 @@ public partial class EASY_PAY : System.Web.UI.Page
         {
             NewService.Service1Client servicio = new NewService.Service1Client();
             resultado = servicio.GetCuenta(Int32.Parse(CodTxt.Text), Int32.Parse(CuentaTxt.Text), ContrasenaTxt.Text, 500);
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + "')", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + resultado + " Por favor oprima cancelar para volver al menú principal')", true);
 
             try
             {
                 VueloDa.registrarCompra();
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Éxito')", true);
-                Response.Redirect("IndexUser.aspx");
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra registrada con éxito')", true);
+                CuentaTxt.Enabled = false;
+                ContrasenaTxt.Enabled = false;
+                CodTxt.Enabled = false;
+                pagar.Visible = false;
             }
             catch (Exception s)
             {
@@ -102,5 +105,10 @@ public partial class EASY_PAY : System.Web.UI.Page
 
         }
 
+    }
+
+    protected void cancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("http://localhost:53551/IndexUser.aspx");
     }
 }

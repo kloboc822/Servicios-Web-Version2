@@ -82,7 +82,7 @@
                                 <asp:Button ID="pagar" class="special" runat="server" Text="Realizar pago" OnClick="pagar_Click"  />
                             </div>
                             <div class="first half field">
-                                <asp:Button ID="cancelar" runat="server" Text="Cancelar"  />
+                                <asp:Button ID="cancelar" runat="server" Text="Cancelar" OnClick="cancelar_Click"  />
 
                         </div>
                     </asp:Panel>
