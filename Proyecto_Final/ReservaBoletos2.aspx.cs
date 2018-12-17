@@ -40,5 +40,6 @@ public partial class ReservaBoletos2 : System.Web.UI.Page
     {
         Global.cod_vuelo = GridView1.SelectedRow.Cells[1].Text;
         Global.precio = Int32.Parse(GridView1.SelectedRow.Cells[4].Text);
+        comprarBtn.Visible = true;
     }
 }
