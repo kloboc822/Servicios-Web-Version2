@@ -18,6 +18,11 @@ namespace NewWSPagos
         {
             string resultado = "";
             int nuevo_fondo = fondo - monto;
+            if (nuevo_fondo < 0)
+            {
+                resultado = "No hay fondos suficientes para la cuenta utilizada";
+                return resultado;
+            }
             try
             {
                 conexion.Close();
@@ -47,6 +52,11 @@ namespace NewWSPagos
         {
             string resultado = "";
             int nuevo_fondo = fondo - monto;
+            if (nuevo_fondo < 0)
+            {
+                resultado = "No hay fondos suficientes para la cuenta utilizada";
+                return resultado;
+            }
             try
             {
                 conexion.Close();
