@@ -127,7 +127,7 @@
                                         <asp:Button ID="loginBtn" runat="server" type= "submit" class="special" Text="Iniciar Sesión" OnClick="loginBtn_Click" />
 									</ul>
                                     <div class="field">
-                                        <asp:HyperLink ID="recuperarContrasena" runat="server" NavigateUrl="~/RecuperarContrasena.aspx">Olvide mi Contraseña</asp:HyperLink>
+                                        <asp:HyperLink ID="recuperarContrasena" runat="server" NavigateUrl="~/RecuperarContrasena.aspx">Olvidé mi Contraseña</asp:HyperLink>
                                     </div>
                                     <div data-onlogin="testAPI()" class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
 								</form>

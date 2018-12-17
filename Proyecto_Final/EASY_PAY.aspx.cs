@@ -42,7 +42,8 @@ public partial class EASY_PAY : System.Web.UI.Page
             try
             {
                 VueloDa.registrarCompra();
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Exito')", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Compra Registrada con Éxito')", true);
+                Response.Redirect("IndexUser.aspx");
             }
             catch (Exception s)
             {

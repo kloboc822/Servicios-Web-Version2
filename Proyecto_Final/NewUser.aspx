@@ -27,8 +27,8 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="Index.aspx" class="logo">
-									<span class="symbol"><img src="images/travel.png" alt="" /></span><span class="title">V-Vuelos</span>
+								<a href="About.aspx" class="logo">
+									<span class="symbol"><img src="images/test.svg" alt="" /></span><span class="title">V-Vuelos</span>
 								</a>
 
 						</div>
@@ -36,7 +36,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<div class="inner">
+						<br class="inner">
 							<section>
 								<h2>V-Vuelos - Creando un nuevo Usuario</h2>
 								<form method="post" action="#">
@@ -71,12 +71,26 @@
                                     <div class="field half">
                                         <asp:TextBox ID="nacionalidadTxt" runat="server" placeholder="Nacionalidad" TextMode="SingleLine"></asp:TextBox>
 									</div>
+                                    <div class="field">
+                                        <asp:DropDownList ID="PreguntaTxt" runat="server">
+                                            <asp:ListItem>Seleccione una pregunta de seguridad</asp:ListItem>
+                                            <asp:ListItem>Cómo se llama mi primer mascota</asp:ListItem>
+                                            <asp:ListItem>Cómo se llamaba mi profesor de primaria</asp:ListItem>
+                                        </asp:DropDownList>
+									</div>
+                                    <div class="field">
+                                        <asp:TextBox ID="RespuestaTxt" runat="server" placeholder="Respuesta de seguridad" TextMode="SingleLine"></asp:TextBox>
+									</div>
+                                    <br />
+                                    <br />
 									<ul class="actions">
                                         <asp:Button ID="createBtn" runat="server" type= "submit" class="special" Text="Create User" OnClick="createBtn_Click" />
                                         <asp:Button ID="cancelBtn" runat="server" Text="Cancel" OnClick="cancelBtn_Click" />
 									</ul>
 								</form>
 							</section>
+                        <br />
+                                    <br />
 							<ul class="copyright">
 								<li>&copy; V-Vuelos Inc. 2018. All rights reserved</li>
 							</ul>
