@@ -21,7 +21,8 @@ public partial class ReservaBoletos2 : System.Web.UI.Page
         try
         {
             VueloDa.registrarReserva();
-            Response.Redirect("http://localhost:53551/IndexUser.aspx");
+            comprarBtn.Visible = false;
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Reserva realizada con éxito. Por favor oprima volver para volver al menú principal')", true);        
         }
         catch (Exception s)
         {

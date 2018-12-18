@@ -63,8 +63,13 @@
                         <div class="field first half">
                             <h2>Estado:<asp:DropDownList ID="dplEstado" runat="server">
                                 </asp:DropDownList>
-                            </h2>
-                                <br />
+                            </h2>                            
+                        </div>
+                        <div class="field">
+                            <h2>Nueva puerta para el vuelo:<asp:DropDownList ID="PuertaDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="cod_puerta" DataValueField="cod_puerta"></asp:DropDownList>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VuelosConnectionString2 %>" SelectCommand="SELECT [cod_puerta] FROM [PUERTA]"></asp:SqlDataSource>
+                            </h2> 
+                            <br />
                         </div>
                          <div class="field">
                         &nbsp;<asp:Button ID="btnUpload" runat="server"  Text="Modificar" class="special" OnClick="btnUpload_Click" />

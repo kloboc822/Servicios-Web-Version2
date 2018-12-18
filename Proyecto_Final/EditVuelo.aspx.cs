@@ -57,15 +57,18 @@ public partial class EditVuelo : System.Web.UI.Page
 
             con2.Close();
             con2.Open();
-            SqlCommand com = new SqlCommand("UPDATE VUELO SET estado=@a1 where cod_vuelo = '" + Session["conVuex"] + "'", con2);
+            SqlCommand com = new SqlCommand("UPDATE VUELO SET estado=@a1, puerta=@p1 where cod_vuelo = '" + Session["conVuex"] + "'", con2);
             com.Parameters.AddWithValue("a1", dplEstado.Text);
+            com.Parameters.AddWithValue("p1", PuertaDDL.SelectedValue);
             com.ExecuteNonQuery();
             con2.Close();
             Response.Redirect("Vuelos.aspx");
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Vuelo Editado')", true);
         }
-        catch (Exception)
-        { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Data')", true); }
+        catch (Exception f)
+        {
+            string resul = f.ToString();
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Data')", true); }
 
     }
 }
