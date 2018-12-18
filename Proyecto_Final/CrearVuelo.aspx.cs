@@ -66,13 +66,16 @@ public partial class CrearVuelo : System.Web.UI.Page
 
         string horas = dplHoras.Text + ":" +dplMin.Text;
         string fecha = txtFecha.Text;
-
+        int temp = 0;
         try
         {
             if (txtFecha.Text.Equals("") || txtPrecio.Text.Equals(""))
-            { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No blank spaces are allowed.')", true); }
+            { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No se permiten espacios en blanco.')", true); }
+            else if (!int.TryParse(txtPrecio.Text, out temp))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Sólo se admiten números en el campo precio')", true);
+            }
 
-          
             else
             {
 

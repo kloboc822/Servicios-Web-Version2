@@ -51,6 +51,7 @@ public partial class Consecutivos : System.Web.UI.Page
 
     protected void btnAgregar_Click(object sender, EventArgs e)
     {
+        int temp = 0;
         //Verificar si ya existe un consecutivo para esa descripcion
         con.Open();
         SqlCommand com1 = new SqlCommand("SELECT descripcion FROM CONSECUTIVO WHERE descripcion = '" + dplDesc.Text + "'", con);
@@ -72,6 +73,10 @@ public partial class Consecutivos : System.Web.UI.Page
                     if (txtCon.Text.Equals("") || txtPre.Text.Equals("") || txtRanFin.Text.Equals("") || txtRanIni.Text.Equals(""))
                     { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No blank spaces are allowed.')", true); }
                     //verificar que el rango inicial sea menor al rango final
+                    else if (!int.TryParse(txtCon.Text, out temp) || !int.TryParse(txtRanFin.Text, out temp) || !int.TryParse(txtRanIni.Text, out temp))
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Sólo se admiten números en los campos rango y consecutivo')", true);
+                    }
                     else if (Convert.ToInt32(txtRanFin.Text) < Convert.ToInt32(txtRanIni.Text))
                     { ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Invalid Ranks')", true); }
                     //verificar que el numero de consecutivo este dentro del rango
