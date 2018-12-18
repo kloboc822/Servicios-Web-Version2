@@ -67,4 +67,9 @@ public partial class Vuelos : System.Web.UI.Page
         cone.Close();
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Index.aspx");
+    }
 }

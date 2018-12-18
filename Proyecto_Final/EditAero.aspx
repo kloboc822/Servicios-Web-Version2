@@ -1,16 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="showCon.aspx.cs" Inherits="showCon" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EditAero.aspx.cs" Inherits="EditAero" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
-         <html>
-
-     <head>
+        
+            <html>
+	<head>
 		<title>Generic - Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,10 +19,8 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-
-<body>
-
-    <!-- Wrapper -->
+	<body>
+		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
@@ -48,66 +46,60 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="Index.aspx">Página principal</a></li>
+							<li><a href="IndexAdmin.aspx">Página principal</a></li>
                             <li><a href="Login.aspx">Log Out</a></li>
                             <li><a href="About.aspx">About Us</a></li>
 						</ul>
 					</nav>
+            <!-- Main -->
+                <asp:Panel ID="main" runat="server">
+                    <asp:Panel ID="Panel1" class="inner" runat="server">
+                        <h1>Editar Aerolínea</h1>
+                        <div class="auto-style1">
+                            <h2>Codigo:<asp:Label ID="lblcodigo" runat="server" Text="Label"></asp:Label>
+                            </h2>&nbsp;&nbsp; 
+                            <br />
+                        </div>
+                        <div class="field first half">
+                            <h2>Nombre:<asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                            </h2>
+                                <br />
+                                <br />
+                                <h2>Imagen:</h2>
+                                <asp:FileUpload ID="FileUpload1" runat="server" />
+                                <br />
+                                <br />
+                        </div>
+                         <div class="field">
+                        &nbsp;<asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Modificar" class="special" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" class="special" />
+                            <br />
+                                </div>
+                            </div>
+                            &nbsp;<br /> &nbsp;</asp:Panel>
+                </asp:Panel>
 
- <!-- Main -->
- <asp:Panel ID="main" runat="server">
-           <asp:Panel ID="Panel1" class="inner" runat="server">
-
-    <div  class="field">
-    
-        <h2>Consecutivos</h2>
-    
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Height="140px" Width="401px" OnRowCommand="GridView1_RowCommand">
-            <Columns>
+				<!-- Footer -->
                 
-                <asp:BoundField DataField="cod_consecutivo" HeaderText="Codigo" />
-                
-                <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                <asp:BoundField DataField="codigo" HeaderText="Consecutivo" />
-                <asp:ButtonField CommandName="seditar" Text="Editar" />
+			</div>
 
-            </Columns>
-        </asp:GridView>
-    
-    </div>
-        <div class="field">
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear Consecutivo" class="special"/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Volver" />
-        </div>
-               <div class="field">
-           <h2>Codigos Asignados</h2> 
-       
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:BoundField DataField="codigo" HeaderText="Codigo" />
-                    <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
-                </Columns>
-            </asp:GridView>
-       
-            &nbsp;
-                   </div>
-                          </asp:Panel>
-              </asp:Panel>  
-</div>
-        <!-- Scripts -->
+		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
-</body>
+       
 
-        </html>
+	</body>
+</html>
 
     </form>
-        <footer align="center">
+
+
+
+    <footer align="center">
 
  <div id="google_translate_element"></div><script type="text/javascript">
 function googleTranslateElementInit() {
@@ -117,7 +109,13 @@ function googleTranslateElementInit() {
     <style type="text/css">
 		.goog-te-banner-frame.skiptranslate{display:none!important;}
 		body{top:0px!important;}
+		.auto-style1 {
+            left: 0px;
+            top: 0px;
+            height: 94px;
+        }
 		</style>
 </footer>
+
 </body>
 </html>

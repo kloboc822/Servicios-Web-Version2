@@ -60,7 +60,7 @@
            <asp:Panel ID="Panel1" class="inner" runat="server">
                <h1>Aerolineas</h1>
     <div class="field">
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="392px">
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="392px" OnRowCommand="GridView1_RowCommand">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Codigo Aerolinea">
                                         <ItemTemplate>
@@ -79,11 +79,14 @@
                                             <asp:Button ID="b1" runat="server" CommandName="Delete" Text="Delete" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:ButtonField Text="Editar" CommandName="Select" />
                                 </Columns>
                             </asp:GridView>
         </div>
                <div class="field">
                             <asp:Button ID="btnCrear" runat="server" Text="Crear Aerolinea" class="special" OnClick="btnCrear_Click" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Volver" />
         </div>
                              </asp:Panel>
               </asp:Panel>  
@@ -99,7 +102,9 @@
 
         </html>
   
+  
     </form>
+    
         <footer align="center">
 
  <div id="google_translate_element"></div><script type="text/javascript">
@@ -112,5 +117,5 @@ function googleTranslateElementInit() {
 		body{top:0px!important;}
 		</style>
 </footer>
-</body>
+        </body>
 </html>

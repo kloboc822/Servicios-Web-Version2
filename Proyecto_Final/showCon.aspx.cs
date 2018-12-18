@@ -67,4 +67,9 @@ public partial class showCon : System.Web.UI.Page
 
         }
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Index.aspx");
+    }
 }

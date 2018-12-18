@@ -58,8 +58,31 @@ public partial class verAerolineas : System.Web.UI.Page
         Response.Redirect("aerolineas.aspx");
     }
 
+ 
+
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
+        Label l1 = GridView1.SelectedRow.FindControl("stlbl") as Label;
+        Session["CodAero"] = l1.Text;
+        Response.Redirect("EditAero.aspx");
 
+       
+    }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Select")
+        {
+            int crow;
+            crow = Convert.ToInt32(e.CommandArgument.ToString());
+            Session["AeroName"] = GridView1.Rows[crow].Cells[1].Text;
+           
+
+        }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Index.aspx");
     }
 }
