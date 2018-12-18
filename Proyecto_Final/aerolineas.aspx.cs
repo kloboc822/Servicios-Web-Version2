@@ -121,9 +121,9 @@ public partial class aerolineas : System.Web.UI.Page
 
                     sumarConsecutivo();
                     dplCodi.DataBind();
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Image uploaded')", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Aerolinea Creada')", true);
                     DatosBITACORA.agregarDato("Aerolínea creada " + txtName.Text);
-
+                    Response.Redirect("verAerolineas.aspx");
 
                 }
 

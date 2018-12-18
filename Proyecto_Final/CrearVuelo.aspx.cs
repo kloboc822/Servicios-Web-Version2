@@ -11,36 +11,40 @@ public partial class CrearVuelo : System.Web.UI.Page
     //SqlConnection con = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = Vuelos; Integrated Security = True");
     protected void Page_Load(object sender, EventArgs e)
     {
-        dpdEstado.Items.Clear();
-        ListItem arribo = new ListItem("Arribó", "Arribó");
-        ListItem salio = new ListItem("Salió", "Salió");
-        ListItem confirmado = new ListItem("Confirmado", "Confirmado");
-        ListItem demorado = new ListItem("Demorado", "Demorado");
-        ListItem atiempo = new ListItem("A tiempo", "A tiempo");
+       
 
-        if (Session["Tipo"].Equals("Salida"))
+        if (!Page.IsPostBack)
         {
-            lblTitulo.Text = "Crear Vuelo de Salida";
-            lblTipo.Text = "Destino";
+            dpdEstado.Items.Clear();
+            ListItem arribo = new ListItem("Arribó", "Arribó");
+            ListItem salio = new ListItem("Salió", "Salió");
+            ListItem confirmado = new ListItem("Confirmado", "Confirmado");
+            ListItem demorado = new ListItem("Demorado", "Demorado");
+            ListItem atiempo = new ListItem("A tiempo", "A tiempo");
 
-            dpdEstado.Items.Add(salio);
-            dpdEstado.Items.Add(confirmado);
-            dpdEstado.Items.Add(demorado);
-            dpdEstado.Items.Add(atiempo);
+            if (Session["Tipo"].Equals("Salida"))
+            {
+                lblTitulo.Text = "Crear Vuelo de Salida";
+                lblTipo.Text = "Destino";
 
+                dpdEstado.Items.Add(salio);
+                dpdEstado.Items.Add(confirmado);
+                dpdEstado.Items.Add(demorado);
+                dpdEstado.Items.Add(atiempo);
+
+            }
+
+            else
+            {
+                lblTitulo.Text = "Crear Vuelo de Llegada";
+                lblTipo.Text = "Procedencia";
+
+                dpdEstado.Items.Add(arribo);
+                dpdEstado.Items.Add(confirmado);
+                dpdEstado.Items.Add(demorado);
+                dpdEstado.Items.Add(atiempo);
+            }
         }
-
-        else
-        {
-            lblTitulo.Text = "Crear Vuelo de Llegada";
-            lblTipo.Text = "Procedencia";
-
-            dpdEstado.Items.Add(arribo);
-            dpdEstado.Items.Add(confirmado);
-            dpdEstado.Items.Add(demorado);
-            dpdEstado.Items.Add(atiempo);
-        }
-
 
         
 
@@ -83,6 +87,7 @@ public partial class CrearVuelo : System.Web.UI.Page
                 DatosBITACORA.agregarDato("Vuelo agregado " + dplCod.Text);
                 VueloDa.sumarConsecutivoVuelo();
                 clearFields();
+                Response.Redirect("Vuelos.aspx");
 
             }
         }

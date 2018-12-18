@@ -115,7 +115,7 @@
                 </asp:DropDownList>
              </div>
 
-              <div class="field half">
+              <div class="field half second">
                   <asp:DropDownList ID="dplMin" runat="server" >
                  <asp:ListItem Value="00"></asp:ListItem>
                  <asp:ListItem Value="05"></asp:ListItem>
