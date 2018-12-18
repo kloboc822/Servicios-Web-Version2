@@ -85,15 +85,16 @@
             <h2>Fecha:<asp:TextBox ID="txtFecha" runat="server" TextMode="Date"></asp:TextBox>
             </h2>
         </div>
+            <br /> 
+            <h2>Hora:</h2>
 <div class ="field half first"> 
-
-            <h2>Hora:</h2><asp:DropDownList ID="dplHoras" runat="server" > 
-                <asp:ListItem>01</asp:ListItem>
+                <asp:DropDownList ID="dplHoras" runat="server" > 
+                <asp:ListItem Value="01"></asp:ListItem>
                 <asp:ListItem Value="02"></asp:ListItem>
                 <asp:ListItem Value="03"></asp:ListItem>
                 <asp:ListItem Value="04"></asp:ListItem>
                 <asp:ListItem Value="05"></asp:ListItem>
-                <asp:ListItem>06</asp:ListItem>
+                <asp:ListItem Value="06"></asp:ListItem>
                 <asp:ListItem Value="07"></asp:ListItem>
                 <asp:ListItem Value="08"></asp:ListItem>
                 <asp:ListItem Value="09"></asp:ListItem>
@@ -114,7 +115,6 @@
                 <asp:ListItem Value="24"></asp:ListItem>
                 </asp:DropDownList>
              </div>
-
               <div class="field half second">
                   <asp:DropDownList ID="dplMin" runat="server" >
                  <asp:ListItem Value="00"></asp:ListItem>
@@ -131,6 +131,7 @@
                  <asp:ListItem Value="50"></asp:ListItem>
             </asp:DropDownList>
             </div>
+               <div></div>
 <div class ="field">
            <h2>Estado:<asp:DropDownList ID="dpdEstado" runat="server">
                </asp:DropDownList>
