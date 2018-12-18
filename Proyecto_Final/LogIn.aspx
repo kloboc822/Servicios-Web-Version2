@@ -128,6 +128,7 @@
 									</ul>
                                     <div class="field">
                                         <asp:HyperLink ID="recuperarContrasena" runat="server" NavigateUrl="~/RecuperarContrasena.aspx">Olvidé mi Contraseña</asp:HyperLink>
+                                    &nbsp;| <asp:HyperLink ID="registroNuevoUsuario" runat="server" NavigateUrl="~/RegistroNormal.aspx">Registrarse</asp:HyperLink>
                                     </div>
                                     <div data-onlogin="testAPI()" class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
 								</form>
