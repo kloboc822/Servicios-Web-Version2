@@ -72,4 +72,33 @@ public partial class Vuelos : System.Web.UI.Page
     {
         Response.Redirect("Index.aspx");
     }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Select")
+        {
+            int crow;
+            crow = Convert.ToInt32(e.CommandArgument.ToString());
+            Session["conVuex"] = GridView1.Rows[crow].Cells[0].Text;
+            Session["drop"] = "llegada";
+
+            Response.Redirect("EditVuelo.aspx");
+
+        }
+    }
+
+    protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "testing")
+        {
+            int crow;
+            crow = Convert.ToInt32(e.CommandArgument.ToString());
+            Session["conVuex"] = GridView2.Rows[crow].Cells[0].Text;
+            Session["drop"] = "salida";
+
+            Response.Redirect("EditVuelo.aspx");
+
+        }
+
+    }
 }

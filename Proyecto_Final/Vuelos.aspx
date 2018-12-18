@@ -59,7 +59,7 @@
         <div class="field">
     
         
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand">
             <Columns>
                 <asp:BoundField DataField="cod_vuelo" HeaderText="Codigo de Vuelo" />
                 <asp:BoundField DataField="aerolinea" HeaderText="Aerolinea" />
@@ -68,6 +68,7 @@
                 <asp:BoundField DataField="hora" HeaderText="Hora" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
                 <asp:BoundField DataField="puerta" HeaderText="Puerta" />
+                <asp:ButtonField CommandName="Select" Text="Editar" />
             </Columns>
         </asp:GridView>
       
@@ -75,7 +76,7 @@
 
        <h1>Vuelos de Salida</h1> 
          <div class="field">
-        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView2_RowCommand">
             <Columns>
                 <asp:BoundField DataField="cod_vuelo" HeaderText="Codigo de Vuelo" />
                 <asp:BoundField DataField="aerolinea" HeaderText="Aerolinea" />
@@ -84,6 +85,7 @@
                 <asp:BoundField DataField="hora" HeaderText="Hora" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
                 <asp:BoundField DataField="puerta" HeaderText="Puerta" />
+                <asp:ButtonField CommandName="testing" Text="Editar" />
             </Columns>
         </asp:GridView>
        </div>
